@@ -1,7 +1,7 @@
 ---
 title: "Demography and Data Science"
 subtitle: "&nbsp;"
-author: "Connor Gilroy"
+author: "Connor Gilroy<br>Copyright (c) 2020 Connor Gilroy ([MIT Licensed](https://github.com/ccgilroy/demography-and-data-science/blob/master/LICENSE))"
 date: "`r Sys.Date()`"
 output: 
   xaringan::moon_reader:
