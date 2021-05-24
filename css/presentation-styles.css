@@ -23,3 +23,17 @@
 .title-slide h1 {
   font-size: 50px;
 }
+
+.image-80 img {
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+}
+
+.image-90 img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}

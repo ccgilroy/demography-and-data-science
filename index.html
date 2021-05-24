@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Demography and Data Science</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Connor Gilroy Copyright (c) 2020 Connor Gilroy (MIT Licensed)" />
-    <meta name="date" content="2020-05-18" />
-    <script src="libs/jquery-1.11.3/jquery.min.js"></script>
-    <script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
+    <meta name="author" content="Connor Gilroy Copyright (c) 2021 Connor Gilroy (MIT Licensed)" />
+    <meta name="date" content="2021-05-24" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -18,23 +17,55 @@ class: center, middle, inverse, title-slide
 
 # Demography and Data Science
 ##  
-### Connor Gilroy<br>Copyright (c) 2020 Connor Gilroy (<a href="https://github.com/ccgilroy/demography-and-data-science/blob/master/LICENSE">MIT Licensed</a>)
-### 2020-05-18
+### Connor Gilroy<br>Copyright (c) 2021 Connor Gilroy (<a href="https://github.com/ccgilroy/demography-and-data-science/blob/master/LICENSE">MIT Licensed</a>)
+### 2021-05-24
 
 ---
 
 
 # About me
 
-- Fifth-year PhD student in Sociology
+.font90[
+
+- Sixth-year PhD student in Sociology
 
 - All of my research projects have involved digital data or data science in some form— 
 
-  - **Gayborhood change:** I webscraped and geocoded an old digital archive of gay bars to identify gay neighborhoods
+  - **The Fragile Families Challenge:** A machine-learning competition on the FFCWS data had less amazing results than you might hope, but we learned some interesting things about surveys and prediction
   
-  - **Sexuality disclosure on Facebook:** "Reach" estimates from Facebook's advertising platform can proxy sexual orientation in the United States
+  - **Sexuality disclosure on Facebook:** "Reach" estimates from Facebook's advertising platform can show how the salience of sexual identity varies in the United States
   
-  - **The Fragile Families Challenge:** A machine-learning competition on the FFCWS data had less amazing results than you might hope, but we learned some interesting things
+  - **Gayborhood change:** I webscraped and geocoded an old digital archive of gay bars to identify gay neighborhoods and examine how those places change over time
+  
+  - **The meaning of "community":** Using word embeddings, I'm disentangling analytical dimensions of "community" from everyday language, with the aim of constructing a new text-based measure for the experience of a sense of community
+  
+  - **Networks of homeless care organizations:** With Twitter networks, we're measuring connections between geographically dispersed local homeless care organizations, to see how those ties relate to federal funding and measures of efficacy
+
+- **Contact info:** [cgilroy@uw.edu](mailto:cgilroy@uw.edu), [@ccgilroy](https://twitter.com/ccgilroy) on Twitter, [website](https://students.washington.edu/cgilroy/)
+
+]
+
+---
+
+# Outline
+
+### Monday
+
+- Overview of demography and data science
+  - A sociological example from a paper of mine
+  
+### Wednesday
+
+- Interactive demo of webscraping and API use
+
+### Friday 
+
+Open-ended, with a few potential directions depending on your interests and needs:
+
+- [My tutorial on the tidycensus package](https://csde-uw.github.io/tidycensus-tutorial/)
+- The text analysis portion of [Monica Alexander's workshop materials](https://mjalexander.github.io/social_media_workshop/)
+- A walkthrough of the code for published or in-progress research
+- Something further afield from demography, like [my materials on word embeddings](https://ccgilroy.github.io/word-embeddings-workshop/)
 
 ---
 
@@ -68,12 +99,23 @@ Emilio Zagheni (MPIDR) makes the argument that demography has been "data-driven"
 
 Digital data are especially useful for studying short-term or recent migration in response to shocks, before they've appeared in official statistics. Examples:
 
-- out-migration from Puerto Rico after Hurricane María, using Facebook ads data (Alexander et al 2019)
+- out-migration from Puerto Rico after Hurricane María, using Facebook ads data (Alexander et al 2019) ([GitHub](https://github.com/MJAlexander/fb-migration-hurricane-maria))
 - migrant flows from Venezuela in response to the humanitarian and economic crisis there, using geolocated Twitter data (Mazzoli et al 2020)
 
-**Non-representativeness** is a major issue. Some of the most relevant statistical challenges are around validation and combining these data with existing sources ([PAA working paper from Zagheni et al](https://paa.confex.com/paa/2018/meetingapp.cgi/Paper/23641))
+**Non-representativeness** is a major issue. Some of the most relevant statistical challenges are around validating these data against and combining them with other data sources. Recent work has started to address those challenges directly: 
 
-On a more theoretical level, Lee Fiorio (UW Geography) has a working paper using Twitter and mobile phone data to show estimates of migration flows between regions vary based on measurement. 
+- [MPIDR working paper](https://www.demogr.mpg.de/papers/working/wp-2020-019.pdf) (Hsiao et al 2020) combining Twitter and ACS data
+- [Alexander et al 2020](https://doi.org/10.1007/s11113-020-09599-3), combining Facebook ads and ACS data ([GitHub](https://github.com/MJAlexander/fb-migration-bayes))
+
+---
+
+# Migration 
+
+### Alexander, Polimis, and Zagheni 2020
+
+.center[&lt;img src="img/alexander_model.png" style="width: 50%"/&gt;]
+
+.center[Link to code: https://github.com/MJAlexander/fb-migration-bayes]
 
 ---
 
@@ -83,17 +125,23 @@ Phillips et al (2019) argue that geolocated Twitter data provide a more accurate
 
 .center[&lt;img src="img/networks.png" style="width: 50%" /&gt;]
 
-Hess and Chasins (working paper, n.d.) scrape data from Craigslist to examine variation in Seattle rental markets. Ian Kennedy has used these same data to investigate how the *text* of these listings varies by the racial composition of neighborhoods.
+Hess and Chasins (working paper, n.d.) scrape data from Craigslist to examine variation in Seattle rental markets. [Kennedy et al 2020](https://doi.org/10.1093/sf/soaa075) use these same data to investigate how the *text* of these listings varies by the racial composition of neighborhoods.
 
 ---
 
 # Other examples
 
+### On-platform surveys
+
 Dennis Feehan (Berkeley Demography) administers surveys on Facebook to learn about offline populations (Feehan and Cobb 2019)
 
-.center[&lt;img src="img/meal.png" style="width: 50%" /&gt;]
+.center[&lt;img src="img/meal.png" style="width: 30%" /&gt;]
 
-Ridhi Kashyap et al (conference paper, 2017) use Google searches to "now-cast" sex ratios at birth in India
+Much covid-related research in the past year, including the [Facebook/CMU/UMD Covid-19 Symptom Survey](https://dataforgood.fb.com/docs/covid-19-symptom-survey-request-for-data-access/), follows similar principles; Facebook releases some other aggregate data through their Data for Good program
+
+### Google search
+
+Ridhi Kashyap et al (conference paper, 2017) use Google searches to "now-cast" sex ratios at birth in India; Bail et al 2019 also use Google search data for a sociological paper on diffusion
 
 ---
 
@@ -101,11 +149,18 @@ Ridhi Kashyap et al (conference paper, 2017) use Google searches to "now-cast" s
 
 ### individual trace data
 
-geolocated tweets, mobile phone records, Craigslist listings
+- geolocated tweets
+- friend and follower ties
+- mobile phone records
+- Craigslist listings
+- ...
 
 ### aggregate counts
 
-Facebook ads reach estimates, derived estimates from individual data
+- Facebook ads reach estimates
+- Twitter account metadata (e.g. number of followers)
+- derived estimates from individual data (which might be lower-risk to share)
+- ...
 
 ---
 
@@ -185,6 +240,20 @@ One consequence is that webscraping is making a comeback
 
 ---
 
+# Maybe don't give up on APIs yet
+
+### Twitter Academic API
+
+In January 2021, [Twitter announced](https://blog.twitter.com/developer/en_us/topics/tools/2021/enabling-the-future-of-academic-research-with-the-twitter-api.html) a new API track which academic researchers can apply for, which provides greater access in terms of volume and historical data. If you have a specific research project and are affiliated with a university, this opens up new possibilities. (The Academic API is for research only, not teaching.)
+
+### Other platforms
+
+- **Pushshift.io** primarily provides API access to data from Reddit, useful for studying the behavior of individuals in online communities
+
+- **Crowdtangle** remains restricted-access, but provides limited information on public Facebook pages, groups, and profiles
+
+---
+
 # Computational social science 
 
 Outside demography, there's CSS research on culture, ideology, polarization, and many other topics
@@ -197,7 +266,7 @@ Outside demography, there's CSS research on culture, ideology, polarization, and
   - Matt Salganik &amp; Chris Bail // SICSS
   - Kieran Healy // http://socviz.co/
   
-CSS methods that haven't seen much use yet in demography include **crowdsourcing** and **text as data**
+CSS methods that haven't seen much use yet in demography include **crowdsourcing** and **text as data** (though see Kennedy et al 2020)
 
 ---
 
@@ -207,14 +276,61 @@ class: inverse, center, middle
 
 ---
 
-# Demo
+# Example
 
-https://ccgilroy.github.io/csss563-demo/demo.html
+### Social media disclosure and the salience of sexual identity
 
-[download from https://github.com/ccgilroy/csss563-demo]
+Ridhi Kashyap and I have a paper using Facebook ads estimates to examine the disclosure of sexual orientation / sexual identity in the US
 
-Contact info: cgilroy@uw.edu, @ccgilroy on Twitter
+- This project started as a demographic estimates paper, but we ultimately shifted toward a more sociological interpretation of the data 
 
+We used stratified queries to build a four-way contingency table - *sexuality X gender X relationship status X age* - then fit a loglinear model to that table
+
+- Specifically, we fit a Bayesian negative binomial model using **rstanarm**; we model *age* with a continuous polynomial rather than age bins (you'll see why in a moment)
+- Model comparison might have shown that some of these four characteristics were conditionally independent of each other; instead, we found out that all of these factors are interrelated 
+  - Most of the paper focuses on carefully going through and interpreting those associations 
+
+---
+class: inverse, center, middle
+
+# 
+
+![](img/figure2_disclosure.png)
+
+---
+class: inverse, center, middle
+
+
+# 
+
+.image-90[![](img/figure7_model_estimates.png)]
+
+---
+class: inverse, center, middle
+
+# 
+
+.image-90[![](img/figure8_data_estimates.png)]
+
+---
+
+# Demo (Wednesday)
+
+Before Wednesday, create a Twitter account if you don't have one and install these packages:
+
+
+```r
+library(tidyverse) # general R data science tools
+library(rvest) # for web scraping
+library(httr) # for general API access
+library(jsonlite) # for working with json-formatted responses
+library(rtweet) # for Twitter API access
+library(leaflet) # for maps
+```
+
+Download the demo code from https://github.com/ccgilroy/csss563-demo
+
+You can view a static  version of the demo at https://ccgilroy.github.io/csss563-demo/demo.html
 
 ---
 
@@ -223,7 +339,9 @@ Contact info: cgilroy@uw.edu, @ccgilroy on Twitter
 .font60.pull-left[
 Alburez-Gutierrez, Diego, Emilio Zagheni, Samin Aref, Sofia Gil-Clavel, André Grow, and Daniela Veronica Negraia. 2019. Demography in the Digital Era: New Data Sources for Population Research. preprint. SocArXiv.  
 
-Alexander, Monica, Kivan Polimis, and Emilio Zagheni. 2019. “The Impact of Hurricane Maria on Out‐migration from Puerto Rico: Evidence from Facebook Data.” Population and Development Review 45(3):617–30.  
+Alexander, Monica, Kivan Polimis, and Emilio Zagheni. 2019. “The Impact of Hurricane Maria on Out-migration from Puerto Rico: Evidence from Facebook Data.” Population and Development Review 45(3):617–30.  
+
+Alexander, Monica, Kivan Polimis, and Emilio Zagheni. 2020. “Combining Social Media and Survey Data to Nowcast Migrant Stocks in the United States.” Population Research and Policy Review. doi: 10.1007/s11113-020-09599-3.
 
 Cesare, Nina, Christan Grant, Quynh Nguyen, Hedwig Lee, and Elaine O. Nsoesie. 2018. “How Well Can Machine Learning Predict Demographics of Social Media Users?” ArXiv:1702.01807 [Cs].  
 
@@ -241,6 +359,8 @@ Freelon, Deen. 2018. “Computational Research in the Post-API Age.” Political
 
 Hess, Chris, and Sarah Chasins. n.d. “Estimating Neighborhood Rents with Scraped Data.” Retrieved May 10, 2020 (https://hesscl.com/smooth-sea/manuscript/index.html).
 
+Kennedy, Ian, Chris Hess, Amandalynne Paullada, and Sarah Chasins. 2020. “Racialized Discourse in Seattle Rental Ad Texts.” Social Forces (soaa075). doi: 10.1093/sf/soaa075.
+
 Mazzoli, Mattia, Boris Diechtiareff, Antònia Tugores, Willian Wives, Natalia Adler, Pere Colet, and José J. Ramasco. 2020. “Migrant Mobility Flows Characterized with Digital Data.” PLOS ONE 15(3):e0230264.  
 
 Phillips, Nolan E., Brian L. Levy, Robert J. Sampson, Mario L. Small, and Ryan Q. Wang. 2019. “The Social Integration of American Cities: Network Measures of Connectedness Based on Everyday Mobility Across Neighborhoods.” Sociological Methods &amp; Research.  
@@ -252,8 +372,6 @@ Zagheni, Emilio, Venkata Rama Kiran Garimella, Ingmar Weber, and Bogdan State. 2
 Zagheni, Emilio, Ingmar Weber, and Krishna Gummadi. 2017. “Leveraging Facebook’s Advertising Platform to Monitor Stocks of Migrants.” Population and Development Review.
 
 ]
-
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -301,6 +419,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -318,17 +462,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
